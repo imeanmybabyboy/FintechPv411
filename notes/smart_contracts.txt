@@ -1,0 +1,54 @@
+Smart Contracts. Solidity.
+
+Смарт-контракти - основи програмування в децентралізованих мережах.
+За змістом - це клас (ООП), який розробляється у відповідності до внутрішніх стандартів мережі.
+За фактом - це розміщений у мережі ресурс із власною мережною адресою.
+Відповідно, розділяємо процес створення смарт-контракту та процес його деплою - розміщення у мережі.
+
+Solidity - мова написання смарт-контрактів
+-------------------------
+Створюємо директорію evm/contracts - для кодів смарт-контрактів
+Створюємо директорію evm/scripts - для скриптів деплою смарт-контрактів
+-------------------------
+Створюємо файл evm/contracts/Counter.sol - деталі у коментарях файлу
+Створюємо файл evm/scripts/deploy-counter.sol - деталі у коментарях файлу
+-------------------------
+============ 1 ============
+Запускаємо 2 термінали
+у першому (переконуємось, що ми у директорії evm/ або даємо команду cd evm)
+запускаємо саму мережу
+> npx hardhat node
+--------- очікуваний результат ---------
+Started HTTP and WebSocket JSON-RPC server at http://127.0.0.1:8545/
+
+Accounts
+========
+
+WARNING: Funds sent on live network to accounts with publicly known private keys WILL BE LOST.
+
+Account #0:  0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266 (10000 ETH)
+Private Key: 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
+
+Account #1:  0x70997970c51812dc3a010c7d01b50e0d17dc79c8 (10000 ETH)
+Private Key: 0x59c6995e998f97a5a0044966f0945389dc9e86dae88c7a8412f4603b6b78690d
+
+Account #2: ...
+
+WARNING: Funds sent on live network to accounts with publicly known private keys WILL BE LOST.
+
+============ 2 ============
+У другому терміналі (не зупиняючи перший, переконавшись, що в ньому іде робота)
+також переконуємось, що робоча директорія терміналу evm/ (або переходимо до неї)
+
+запускаємо компіляцію всіх скриптів
+> npx hardhat compile
+--------- очікуваний результат ---------
+Downloading solc 0.8.28
+Downloading solc 0.8.28 (WASM build)
+
+Compiled 1 Solidity file with solc 0.8.28 (evm target: cancun)
+
+Запускаємо скрипт публікації
+> npx hardhat run scripts/deploy-counter.ts --build-profile production --network localhost
+> npx hardhat run scripts/deploy-greeter.ts --build-profile production --network localhost
+> npx hardhat run scripts/deploy-voter.ts --build-profile production --network localhost

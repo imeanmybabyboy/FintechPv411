@@ -1,0 +1,9 @@
+{
+  "name": "evm",
+  "version": "1.0.0",
+  "type": "module",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^4.0.15",
+    "ethers": "^6.17.0"
+  }
+}

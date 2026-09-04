@@ -1,0 +1,31 @@
+Ethereum Virtual Machine (EVM)
+Оточення, що реалізує функції розподілених обчислень з усіма їхніми особливостями, у т.ч. мережею.
+Локальна версія встановлюється як окреме ПЗ, будемо користуватися Hardhat.
+
+Створюємо окрему директорію для неї
+> md evm
+Переходимо до неї
+> cd evm
+Користуємося документацією https://hardhat.org/docs/getting-started
+встановлюємо hardhat до директорії
+> npx hardhat --init
+  Please provide either a relative or an absolute path: · . <ENTER - default>
+  What type of project would you like to initialize? · minimal (SELECT - not default)
+  Do you want to run it now? (Y/n) · false (n)
+
+------------------------------------
+Встановлюємо інструменти роботи з ether (https://hardhat.org/docs/plugins/hardhat-ethers)
+але з корекцією: 
+> npm install --save-dev @nomicfoundation/hardhat-ethers ethers
+In your hardhat.config.ts file, import the plugin and add it to the plugins array:
+
+
+import { defineConfig } from "hardhat/config";
+import hardhatEthers from "@nomicfoundation/hardhat-ethers" // add
+
+export default defineConfig({
+  solidity: {
+    version: "0.8.28",
+  },
+  plugins: [hardhatEthers] // add
+});

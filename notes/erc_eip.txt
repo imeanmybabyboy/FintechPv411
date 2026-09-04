@@ -1,0 +1,20 @@
+ERC (Ehtereum Request Comments) - аналог стандартів RFC
+EIP (Ethereum Improvement Proposals) - внутрішня система стандартизації
+
+ERC-20 Token Standard
+Перелік методів та подій, які повинні бути реалізовані у смарт-контрактах, що мають тип "Fungible Token". До таких належать криптовалюти
+
+При виклику метода передається частина хешу (4 байти) їх імені у полі msg.data. Це дає можливість визначити який метод було викликано, особливо, у випадку, якщо його не було знайдено і спрацював fallback.
+Для стандартних методів доцільно одержати їх хеші альтернативним шляхом та зберегти для налагодження смарт-контрактів.
+0x06fdde03 name()    
+0x95d89b41 symbol()  
+0x313ce567 decimals()
+0x18160ddd totalSupply() 
+0x70a08231 balanceOf(address) 
+0xa9059cbb transfer(address,uint256) 
+0x23b872dd transferFrom(address,address,uint256) 
+0x095ea7b3 approve(address,uint256) 
+0xdd62ed3e allowance(address,address) 
+
+ERC-165: Standard Interface Detection
+0x01ffc9a7 supportsInterface(bytes4)
