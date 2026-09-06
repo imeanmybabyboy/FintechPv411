@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: UNLICENSED
 // усі смарт-контракти повинні починатися з ліцензії, що регулює авторське право на його код
+import "hardhat/console.sol";
 
 pragma solidity ^0.8.28;
 // обов'язково зазначити обмеження на версію компілятора
@@ -10,6 +11,10 @@ contract Counter { // Контракт - аналог класу ООП
   event Increment(int8 by); // Події - засіб інформування про зміни у смарт контракті
                             // int/uint змінюються від int8...int256
                             // aliases int - int256, uint - uint256
+
+  function initial() public pure {
+    console.log("Hello, world");
+  }
 
   function inc() public {
     x += 1; // зміна стану - немає інформування

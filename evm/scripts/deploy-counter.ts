@@ -21,6 +21,8 @@ console.log("Contract address:", await counter.getAddress());
 console.log("Calling .inc() method...");
 const task = await counter.inc();
 
+const initialGreet = await counter.initial();
+
 // метод запускає подію, результат якої також слід чекати
 console.log("Waiting for an event result...", task);
 await task.wait();
