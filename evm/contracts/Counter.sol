@@ -12,10 +12,6 @@ contract Counter { // Контракт - аналог класу ООП
                             // int/uint змінюються від int8...int256
                             // aliases int - int256, uint - uint256
 
-  function initial() public pure {
-    console.log("Hello, world");
-  }
-
   function inc() public {
     x += 1; // зміна стану - немає інформування
     emit Increment(1); // запуск події - інформування
