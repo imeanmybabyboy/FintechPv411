@@ -11,3 +11,4 @@ console.log("Deployment finished...");
 
 const task = await initial.greet();
 console.log(task);
+console.log("Contract address: " + await initial.getAddress());
